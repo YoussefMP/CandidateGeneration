@@ -1,0 +1,48 @@
+\documentclass[]{upb_cs_thesis}\input{packages}
+
+\input{packages}
+\input{commands}
+
+\graphicspath{{figures/}}
+
+\title{Efficient, embedding based candidates generation, to improve entities and relations linking.}
+\author{Youssef Ameur}
+\thesistype{Bachelor's Thesis}
+
+\submissiondate{\today{}}
+
+\begin{document}
+\input{pretext/titlepage} % prints the title page
+%\input{pretext/erklaerung} % prints the statement that you worked on your own and did not commit plagiarism
+%\clearpage
+\let\cleardoublepage\clearpage
+\vspace*{\fill}
+\begin{abstract}
+	\input{Abstract}
+\end{abstract}
+\acresetall
+\vspace*{\fill}
+\emptypage
+
+\tableofcontents % prints the table of contents
+
+
+%%%%%%%%%
+% the contents of your thesis go into file body.tex
+%%%%%%%%%
+\input{body}
+
+% include the bibliography, and add it as a chapter the table of contents
+\newpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{alpha}
+\bibliography{literature.bib}
+
+
+%%%%%%%%%
+% the appendices of your thesis go into file appendix.tex
+%%%%%%%%%
+%\appendix
+%\input{appendix}
+
+\end{document}
