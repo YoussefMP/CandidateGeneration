@@ -2,13 +2,20 @@
 \label{ch:introduction}
 
 
-The task of linking names in free text to referent entities in a knowledge base is known as entity linking. Entity linking can assist text analysis algorithms in comprehending the context of the name in depth by using known entity information. The most recently proposed linking systems are divided into two steps: candidate creation (aka. candidate generation) and candidate rating (aka. entity disambiguation).\newline
-Numerous works have been done to improve the systems that perform the task of entity linking, and many of these works have focused on the second step of the named task[cite 01]. The 
-developped systems have achieved considerable results, e.g. in [cite 02] they achieved an accuaracy of 95\% of five standard entity disambiguation datasets.\newline
-Nonetheless, regardless of how accurate the system is, the first stage of candidate creation is critical to a solid performance, since the abscence of the actual referred entity in the candidate set generated will inevitably lead to erronous output.\newline
-In this paper, we discuss the strategy we use to generate candidates for mentions in a given text. This strategy is similar to the one described in [cite 03+04]'s publications and others. This technique leverages knowledge graph embeddings as a target space to which the embeddings of the mentions will be mapped to. \newline
-bla \newline
-bla \newline
-blop \newline
+The task of linking names in free text to referent entities in a knowledge base is known as entity linking. The use of the entity linking task spans over multiple domains (e.g. Information extraction, biomedical text processing, ...) [05]. Here, we focus mainly on how it assists text analysis in comprehending the context of the name in depth by using known entity information. The most recently proposed linking systems are divided into two steps: candidate creation (aka. candidate generation) and candidate ranking (aka. entity disambiguation).\newline
 
-The rest of the thesis is organized as follows: ....
+Numerous works have been done to improve the systems that perform the task of entity linking, and many of these works have focused on the second step of the named task [01]. The developed systems have achieved considerable results, e.g. in [02], they achieved an accuracy of 95\% on five standard entity disambiguation datasets.\newline
+Nonetheless, regardless of how accurate the system is, the first stage of candidate creation is critical to a solid performance, since the absence of the referred entity in the candidate set generated will inevitably lead to an erroneous output.\newline
+
+Although simple approaches that rely on string similarity or Wikipedia anchor-text links have achieved a high recall [ ], these methods are not without their own set of obstacles and issues. We will discuss these in the following chapter in more detail.\newline
+
+The technique we will present in this work bypasses the surface form of any given mention. By relying on word embeddings generated with the help of pre-trained models, we encode the present mentions and their context and use high-density vectors to represent them. \newline
+In turn, we will map the resulting vectors to an embedding space that represents the entities contained in the underlying knowledge graph, which entities we are trying to link the mentions to. This strategy is similar to the one described in [03, 04]'s works and others. \newpage
+
+In the remaining part of this work, we will proceed as follows:\newline
+\begin{itemize}
+\item First, we will consider some of the approaches adopted to generate candidate entities for mentions, that do not rely on embeddings and we will discuss their challenges and shortcomings. Then we will mention certain methods that inspired this work while discussing the similarities and the differences. 
+\item  Second, after giving some background knowledge on the task to be executed, we will explain the inner workings of the system we implemented in detail, and how we went about implementing it. 
+\item  Next to last, we present the results of the tests that our system will undergo, measure its performance, followed by an analysis.
+\item  Finally, based on our findings and previous works we will draw conclusions and state any possibilities for improvements and future work.
+\end{itemize}
