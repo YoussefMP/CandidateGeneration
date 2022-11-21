@@ -1,0 +1,49 @@
+import csv
+import sys
+import os
+sys.path.insert(0, os.getcwd())
+
+from Code.FileIOManager import ModelFileIO, time_format
+from Code.blink.Gen_subgraph_new_emb import get_aida_files_urls
+import time
+import random
+
+fman = ModelFileIO()
+
+ds_urls = get_aida_files_urls(fman)
+ds_urls = list(dict.fromkeys(ds_urls))
+
+kge_file = open(f"{fman.results_repo}/sub_kge.tsv", "r", encoding="utf-8")
+print("reading kge lines")
+lines = kge_file.readlines()
+sub_kge = {}
+
+output_file = open(f"{fman.results_repo}/sub_kge_17_11_2022.tsv", "w", encoding="utf-8")
+writer = csv.writer(output_file, delimiter="\t")
+
+found = 0
+start = time.time()
+for lid in range(len(lines)):
+
+    line = lines[lid]
+    line = line.split("\t")
+
+    if len(line) < 4:
+      continue
+
+    url = line[0]
+
+    if lid % 1000000 == 0:
+        end = time.time()
+        print(f"To process {lid} lines it took {time_format(int(end-start))} , and we found {found} links and entered {found*3000} entries")
+        start = time.time()
+
+    u = random.uniform(0, 1)
+    if u < 0.05 or url in ds_urls:
+        found += 1
+        tline = lines[i]
+        tline = tline.split("\t")
+        writer.writerow(tline)
+        ds_urls.pop
+
+
