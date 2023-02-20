@@ -1,0 +1,17 @@
+\chapter{Appendix}
+\label{apx}
+For the experiment, we constructed an HNSW-graph index with embeddings for entities for which we could extract TransE embedding, a label, and a text description (Number of entities 686.164). As for the evaluation, similarly to the previous setup \ref{exp}, we evaluated the model on both datasets AIDA\_TESTA and AIDA\_TESTB.\newline
+
+\begin{table}[h]
+\begin{tabular}{ |p{3cm}||p{2.5cm}||p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+ \hline   
+  Recall@50 & Recalled entities & Recall  & Average cos sim & Maximum cos sim\\
+ \hline 
+ AIDA\_A & 2629 & 0.57 & 0.74 & 0.83\\
+ \hline
+ AIDA\_B & 2188 & 0.75 & 0.75 & 0.84\\
+ \hline
+\end{tabular}
+\caption{Results of the available Blink model test}
+\label{lastT}
+\end{table}

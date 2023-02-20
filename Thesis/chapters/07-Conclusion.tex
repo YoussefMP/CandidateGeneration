@@ -1,0 +1,7 @@
+\chapter{Conclusion}
+\label{ch:Conclusion}
+We started this work with the objective of implementing an efficient system that solves the task of Candidate Generation.\newline
+We have researched multiple methods that were adopted over the years, most of which did not isolate the task of Candidate Generation but rather focused on the downstream task of entity linking. We mentioned some of the shortcomings and advantages of these methods in solving Candidate Generation as a subtask.\newline
+In light of the results discovered, we decided to rely upon word and text embeddings generated with the help of transformer encoders to retrieve candidate entities from a knowledge graph embedding space, based on a distance metric.\newline
+While we expected to reach moderate recall with simple models, the tests conducted clearly show that complex models achieve higher recall due to the added information encoded in the embedding representation. \newline
+To better understand the implication of these results future studies could address the tradeoff between the complexity of a model and its performance.
